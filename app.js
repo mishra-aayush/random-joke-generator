@@ -6,11 +6,11 @@ btn.addEventListener("click", async () => {
   }
   setTimeout(() => {  
     try {
-      document.getElementById("punchline").innerHTML = punchlineText;
       const randomImage = getRandomImage();
       var x = document.getElementById("image");
       x.style.visibility = "visible";
       x.src = images[randomImage];
+      document.getElementById("punchline").innerHTML = punchlineText;
       btn.innerHTML = "More Lame Jokes Please!";
       } 
     catch (error) {
