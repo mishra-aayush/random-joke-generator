@@ -37,8 +37,8 @@ body {
 img {
   display: block;
   visibility: hidden;
-  width: 400px;
-  margin: 0 auto;
+  width: auto;
+  padding: 0 4rem;
 }
 
 #setup, #punchline {
