@@ -5,13 +5,17 @@ btn.addEventListener("click", async () => {
     location.reload(true);
   }
   setTimeout(() => {  
-    const randomImage = getRandomImage();
-    var x = document.getElementById("image");
-    x.style.visibility = "visible";
-    x.src = images[randomImage];
-    document.getElementById("punchline").innerHTML = punchlineText;
-    btn.innerHTML = "More Lame Jokes Please!";
-    console.log(error);
+    try {
+      const randomImage = getRandomImage();
+      var x = document.getElementById("image");
+      x.style.visibility = "visible";
+      x.src = images[randomImage];
+      document.getElementById("punchline").innerHTML = punchlineText;
+      btn.innerHTML = "More Lame Jokes Please!";
+      } 
+    catch (error) {
+      console.log(error);
+    }
     counter++;
   }, 500);
 });
@@ -23,16 +27,8 @@ function getRandomImage() {
   return Math.floor(Math.random()*images.length);
 }
 
-try {
-  $.getJSON('https://official-joke-api.appspot.com/random_joke', function(data) 
-  {
-      document.getElementById("setup").innerHTML = `${data.setup}`;
-      punchlineText = `${data.punchline}`;
-  });
-}
-catch (error) {
-  console.log(error);
-  document.getElementById("setup").innerHTML = "Can't Fetch Data";
-  document.getElementById("punchline").innerHTML = "Refresh Page";
-  btn.style.visibility = "hidden";
-}
+$.getJSON('https://official-joke-api.appspot.com/random_joke', function(data) 
+{
+    document.getElementById("setup").innerHTML = `${data.setup}`;
+    punchlineText = `${data.punchline}`;
+});
