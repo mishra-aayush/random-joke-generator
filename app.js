@@ -17,7 +17,7 @@ btn.addEventListener("click", async () => {
       console.log(error);
     }
     counter++;
-  }, 500);
+  }, 100);
 });
 
 const images = ["./images/img1.jpg", "./images/img2.png", "./images/img3.jpg", "./images/img5.jpg", "./images/img6.jpg", "./images/img7.jpg", "./images/img8.jpg",
