@@ -27,7 +27,7 @@ function getRandomImage() {
   return Math.floor(Math.random()*images.length);
 }
 
-$.getJSON('https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Pun,Spooky', function(data) 
+$.getJSON('https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Pun,Spooky?type=twopart', function(data) 
 {
     document.getElementById("setup").innerHTML = `${data.setup}`;
     punchlineText = `${data.delivery}`;
