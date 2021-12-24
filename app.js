@@ -27,8 +27,9 @@ function getRandomImage() {
   return Math.floor(Math.random()*images.length);
 }
 
-$.getJSON('https://official-joke-api.appspot.com/random_joke', function(data) 
+$.getJSON('https://v2.jokeapi.dev/joke/Programming,Miscellaneous,Pun,Spooky', function(data) 
 {
     document.getElementById("setup").innerHTML = `${data.setup}`;
-    punchlineText = `${data.punchline}`;
+    punchlineText = `${data.delivery}`;
 });
+// https://official-joke-api.appspot.com/random_joke -- not in use
